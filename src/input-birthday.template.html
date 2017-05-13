@@ -1,0 +1,40 @@
+<fieldset class="birthday-picker">
+  <label for="birthday-input-year"
+         class="sr-only">
+    {{ 'birthday-input.year-label' | translate }}
+  </label>
+  <select id="birthday-input-year"
+          class="birth-year"
+          data-ng-model="$ctrl.year"
+          data-ng-change="$ctrl.update()"
+          data-ng-options="value for value in $ctrl.years">
+    <option value="">{{ 'birthday-input.years' | translate }}</option>
+  </select>
+
+  <label for="birthday-input-month"
+         class="sr-only">
+    {{ 'birthday-input.month-label' | translate }}
+  </label>
+  <select id="birthday-input-month"
+          class="birth-month"
+          data-ng-model="$ctrl.month"
+          data-ng-change="$ctrl.update()"
+          data-ng-options="key as value for (key, value) in $ctrl.months">
+    <option value="">{{ 'birthday-input.months' | translate }}</option>
+  </select>
+
+  <label for="birthday-input-day"
+         class="sr-only"
+         data-ng-if="$ctrl.askDay">
+    {{ 'birthday-input.day-label' | translate }}
+  </label>
+  <select id="birthday-input-day"
+          class="birth-day"
+          data-ng-if="$ctrl.askDay"
+          data-ng-model="$ctrl.day"
+          data-ng-change="$ctrl.update()"
+          data-ng-options="value for value in $ctrl.days"
+          data-ng-disabled="!$ctrl.month || !$ctrl.year">
+    <option value="">{{ 'birthday-input.days' | translate }}</option>
+  </select>
+</fieldset>

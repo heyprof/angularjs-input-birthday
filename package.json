@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/heyprof/angularjs-input-birthday/issues"
   },
-  "main": "index.js",
+  "main": "dist/angularjs-input-birthday.js",
   "scripts": {
     "build": "webpack --config webpack.build.config.js",
     "serve": "webpack-dev-server --config webpack.serve.config.js",

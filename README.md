@@ -24,7 +24,7 @@ Add the component in your project:
 <input-birthday data-ng-model="$ctrl.myData"></input-birthday>
 ```
 
-**See [example page]() for more informations and options doc**
+**See [example page](https://heyprof.github.io/angularjs-input-birthday/) for more informations and options doc**
 
 ### Contrib
 

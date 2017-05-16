@@ -1,44 +1,32 @@
-## angularjs-input-birthday
+## Install
 
-An AngularJS component to select a birthday date. The package require moment and angular-translate
+- npm: `npm install --save angularjs-input-birthday`
+- bower: `bower install --save angularjs-input-birthday`
 
-### Install
+## Demo
 
-npm: `npm install --save angularjs-input-birthday`
+<input-birthday data-ng-model="birthdate"></input-birthday>
+<pre data-ng-bind="birthdate"></pre>
 
-or
+## Usage
 
-bower: `bower install --save angularjs-input-birthday`
-
-### Usage
-
-Add the module in your app:
+Add module to your app:
 
 ```javascript
-angular.module('myApp', ['angularjs-input-birthday'])
+angular.module('app', ['angularjs-input-birthday']);
 ```
 
-Add the component in your project:
+And the component where you want in this app:
 
 ```html
-<input-birthday data-ng-model="$ctrl.myData"></input-birthday>
+<input-birthday data-ng-model="birthdate"></input-birthday>
 ```
 
-**See [example page]() for more informations and options doc**
+Data will be returned as Js Date Object or Moment date depending on params
 
-### Contrib
+## LICENCE MIT
 
-Start you should play with dependencies: `npm install`
-
-Then you should be able to develop with: `npm run serve` (with hot reload)
-
-Finally, if you want generate the dist folder: `npm run build`
-
-That's it, you can create fork and submit your updates :)
-
-### LICENCE
-
-MIT License
+The MIT License (MIT)
 
 Copyright (c) 2017 HeyProf!
 

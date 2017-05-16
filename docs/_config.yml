@@ -1,1 +1,6 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-slate
+title: Angular Input Birthday
+description: An AngularJS component to select a birthdate
+
+show_downloads: true
+google_analytics: UA-99226656-3

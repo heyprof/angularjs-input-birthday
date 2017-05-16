@@ -8,12 +8,12 @@ module.exports = {
     './src/dev-server.js'
   ],
   output: {
-    publicPath: '/'
+    filename: '[name].js',
+    sourceMapFilename: '[name].map'
   },
   devtool: 'eval',
   devServer: {
-    hot: true,
-    publicPath: '/'
+    hot: true
   },
   module: {
     rules: [{
@@ -23,7 +23,10 @@ module.exports = {
       enforce: 'pre'
     }, {
       test: /\.scss$/,
-      loaders: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader']
+      loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+    }, {
+      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      loader: 'file-loader?name=public/fonts/[name].[ext]'
     }, {
       test: /\.js$/,
       exclude: /(node_modules)/,
@@ -39,6 +42,15 @@ module.exports = {
     }]
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks(module) {
+        return module.context && module.context.indexOf('node_modules') !== -1;
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({template: './src/dev-server.html'})
   ]

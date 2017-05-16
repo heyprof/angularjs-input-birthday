@@ -1,7 +1,3 @@
-import angular from 'angular';
-import moment from 'moment';
-import 'angular-translate';
-
 import './input-birthday.style.scss';
 
 /**

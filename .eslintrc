@@ -1,6 +1,8 @@
 {
   "globals": {
-    "expect": true
+    "expect": true,
+    "angular": true,
+    "moment": true
   },
   "root": true,
   "env": {

@@ -7,18 +7,18 @@
 
 ### Init empty
 
-<input-birthday data-ng-model="birthdate"></input-birthday>
-<pre data-ng-bind="birthdate"></pre>
+<input-birthday data-ng-model="birthdateEmpty"></input-birthday>
+<pre data-ng-bind="birthdateEmpty"></pre>
 
 ### Init with a date
 
-<input-birthday data-ng-model="$ctrl.birthdate"></input-birthday>
-<pre data-ng-bind="$ctrl.birthdate"></pre>
+<input-birthday data-ng-model="birthdate"></input-birthday>
+<pre data-ng-bind="birthdate"></pre>
 
 ### Init with default today date
 
-<input-birthday data-ng-model="birthdate2" init-today="true"></input-birthday>
-<pre data-ng-bind="birthdate2"></pre>
+<input-birthday data-ng-model="birthdateToday" init-today="true"></input-birthday>
+<pre data-ng-bind="birthdateToday"></pre>
 
 ## Usage
 

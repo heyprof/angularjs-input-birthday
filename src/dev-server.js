@@ -6,7 +6,7 @@ import './input-birthday.component';
 
 class DevServerComponent {
   $onInit() {
-    this.birthdate = new Date().toISOString();
+    this.birthdate = new Date('1990-02-25').toISOString();
   }
 }
 
@@ -32,7 +32,12 @@ angular.module('dev-server', [
   });
 }).component('devServer', {
   template: `
+<input-birthday return-type="moment" ng-model="birthdate"></input-birthday>
+<pre>{{ birthdate }}</pre>
+<input-birthday return-type="moment" ng-model="birthdate2" init-today="true"></input-birthday>
+<pre>{{ birthdate2 }}</pre>
 <input-birthday return-type="moment" ng-model="$ctrl.birthdate"></input-birthday>
-<pre>{{ $ctrl.birthdate }}</pre>`,
+<pre>{{ $ctrl.birthdate }}</pre>
+`,
   controller: DevServerComponent
 });

@@ -14,17 +14,23 @@ class BirthdayInputComponent {
     this.years = this.getLastYears();
     this.months = moment.months();
     this.askDay = angular.isUndefined(this.askDay) || this.askDay;
+    this.initToday = Boolean(this.initToday);
 
-    this.ngModel = moment(this.ngModel || new Date());
+    this.ngModel =
+      (this.ngModel && moment(this.ngModel)) ||
+      (this.initToday && moment(new Date())) ||
+      undefined;
 
-    const year = this.ngModel.year();
-    const month = this.ngModel.month();
-    const nbDays = moment(year + month, 'YYYYMM').daysInMonth();
-    this.days = this.range(nbDays);
+    if (this.ngModel) {
+      const year = this.ngModel.year();
+      const month = this.ngModel.month();
+      const nbDays = moment(year + month, 'YYYYMM').daysInMonth();
+      this.days = this.range(nbDays);
 
-    this.year = year;
-    this.month = String(this.ngModel.month());
-    this.day = parseInt(this.ngModel.format('DD'), 0);
+      this.year = year;
+      this.month = String(this.ngModel.month());
+      this.day = parseInt(this.ngModel.format('DD'), 0);
+    }
   }
 
   update() {
@@ -71,6 +77,7 @@ angular.module('angularjs-input-birthday', [
   bindings: {
     returnType: '@',
     returnFormat: '@',
+    initToday: '<',
     askDay: '<',
     ngModel: '=',
     yearLabel: '<'

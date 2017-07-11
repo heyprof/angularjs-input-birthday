@@ -5,8 +5,15 @@
 
 ## Demo
 
+### Init empty
+
 <input-birthday data-ng-model="birthdate"></input-birthday>
 <pre data-ng-bind="birthdate"></pre>
+
+### Init with a date
+
+<input-birthday data-ng-model="$ctrl.birthdate"></input-birthday>
+<pre data-ng-bind="$ctrl.birthdate"></pre>
 
 ## Usage
 

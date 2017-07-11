@@ -222,19 +222,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
    * }
  */
 var BirthdayInputComponent = function () {
-  /** @ngInject */
   function BirthdayInputComponent() {
     _classCallCheck(this, BirthdayInputComponent);
-
-    this.years = this.getLastYears();
-    this.months = moment.months();
-    this.days = [];
   }
 
   _createClass(BirthdayInputComponent, [{
     key: '$onInit',
     value: function $onInit() {
+      this.years = this.getLastYears();
+      this.months = moment.months();
       this.askDay = angular.isUndefined(this.askDay) || this.askDay;
+
+      this.ngModel = moment(this.ngModel || new Date());
+
+      var year = this.ngModel.year();
+      var month = this.ngModel.month();
+      var nbDays = moment(year + month, 'YYYYMM').daysInMonth();
+      this.days = this.range(nbDays);
+
+      this.year = year;
+      this.month = String(this.ngModel.month());
+      this.day = parseInt(this.ngModel.format('DD'), 0);
     }
   }, {
     key: 'update',

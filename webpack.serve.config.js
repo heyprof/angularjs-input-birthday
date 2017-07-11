@@ -22,7 +22,7 @@ module.exports = {
       loader: 'eslint-loader',
       enforce: 'pre'
     }, {
-      test: /\.scss$/,
+      test: /\.(css|scss$)/,
       loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
     }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,

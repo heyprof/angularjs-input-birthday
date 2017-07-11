@@ -4,6 +4,12 @@ import moment from 'moment';
 
 import './input-birthday.component';
 
+class DevServerComponent {
+  $onInit() {
+    this.birthdate = new Date().toISOString();
+  }
+}
+
 angular.module('dev-server', [
   'pascalprecht.translate',
 
@@ -24,4 +30,9 @@ angular.module('dev-server', [
   moment.locale('fr', {
     months: 'Janvier_Février_Mars_Avril_Mai_Juin_Juillet_Août_Septembre_Octobre_Novembre_Décembre'.split('_')
   });
+}).component('devServer', {
+  template: `
+<input-birthday return-type="moment" ng-model="$ctrl.birthdate"></input-birthday>
+<pre>{{ $ctrl.birthdate }}</pre>`,
+  controller: DevServerComponent
 });

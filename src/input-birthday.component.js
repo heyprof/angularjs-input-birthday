@@ -10,15 +10,21 @@ import './input-birthday.style.scss';
    * }
  */
 class BirthdayInputComponent {
-  /** @ngInject */
-  constructor() {
+  $onInit() {
     this.years = this.getLastYears();
     this.months = moment.months();
-    this.days = [];
-  }
-
-  $onInit() {
     this.askDay = angular.isUndefined(this.askDay) || this.askDay;
+
+    this.ngModel = moment(this.ngModel || new Date());
+
+    const year = this.ngModel.year();
+    const month = this.ngModel.month();
+    const nbDays = moment(year + month, 'YYYYMM').daysInMonth();
+    this.days = this.range(nbDays);
+
+    this.year = year;
+    this.month = String(this.ngModel.month());
+    this.day = parseInt(this.ngModel.format('DD'), 0);
   }
 
   update() {

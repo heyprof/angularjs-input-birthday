@@ -12,15 +12,13 @@
 
 ### Init with a date
 
-<div ng-controller="InitSampleCtrl as $ctrl">
-  <input-birthday data-ng-model="$ctrl.birthdate"></input-birthday>
-  <pre data-ng-bind="$ctrl.birthdate"></pre>
-</div>
+<input-birthday data-ng-model="$ctrl.birthdate"></input-birthday>
+<pre data-ng-bind="$ctrl.birthdate"></pre>
 
 ### Init with default today date
 
-<input-birthday data-ng-model="$ctrl.birthdate" init-today="true"></input-birthday>
-<pre data-ng-bind="$ctrl.birthdate"></pre>
+<input-birthday data-ng-model="birthdate2" init-today="true"></input-birthday>
+<pre data-ng-bind="birthdate2"></pre>
 
 ## Usage
 

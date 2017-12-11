@@ -30,13 +30,6 @@ class BirthdayInputComponent {
       this.year = year;
       this.month = String(this.ngModel.month());
       this.day = parseInt(this.ngModel.format('DD'), 0);
-
-      const birthdayDate = moment(`${this.year}-${this.month}-${this.day}`, 'YYYY-MM-DD');
-      if (this.returnFormat) {
-        this.ngModel = birthdayDate.format(this.returnFormat);
-      } else {
-        this.ngModel = this.returnType === 'moment' ? birthdayDate : birthdayDate.toDate();
-      }
     }
   }
 

@@ -1,4 +1,5 @@
 import './input-birthday.style.scss';
+import moment from 'moment';
 
 /**
  * AngularJS 1.5+ Component using moment for Birthday input component

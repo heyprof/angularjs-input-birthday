@@ -1,12 +1,15 @@
 #!/bin/bash
 
 if [[ $TRAVIS_PULL_REQUEST_BRANCH != *"greenkeeper"* ]]; then
-	# Not a GreenKeeper Pull Request, aborting
 	exit 0
 fi
 
 if ! git diff-index --quiet HEAD --; then
   echo "Commit and push lockfile"
+  git status
+  ls -lah
+
+  # git checkout $TRAVIS_PULL_REQUEST_BRANCH
   git config --global user.email "$GITHUB_EMAIL"
   git config --global user.name "Travis CI"
   git config --global push.default simple

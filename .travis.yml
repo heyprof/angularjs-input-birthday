@@ -14,9 +14,6 @@ git:
 before_script:
   - bash ci/commit-lockfile.sh
 
-after_success:
-  - bash ci/commit-lockfile.sh
-
 notifications:
   email: false
   slack:

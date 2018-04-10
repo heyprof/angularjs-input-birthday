@@ -22,5 +22,6 @@ notifications:
   email: false
   slack:
     on_success: change
+    on_failure: always
     rooms:
       - heyprof:OnsMQaj2FtGkJ972FzpPw60T#pipelines-front

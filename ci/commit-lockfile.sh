@@ -11,7 +11,7 @@ if ! git diff-index --quiet HEAD --; then
   git remote add jenkins https://"$GITHUB_TOKEN"@github.com/"$TRAVIS_REPO_SLUG".git
 
   git add package-lock.json
-  git commit -m "chore(*): update lockfile"
+  git commit -m "chore(*): update lockfile [ci skip]"
   LAST_COMMIT=`git rev-parse HEAD`
   git push jenkins $LAST_COMMIT:$TRAVIS_PULL_REQUEST_BRANCH
   git remote rm jenkins

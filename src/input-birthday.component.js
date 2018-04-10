@@ -1,4 +1,3 @@
-import './input-birthday.style.scss';
 import moment from 'moment';
 
 /**

@@ -18,16 +18,16 @@ jobs:
           - dependencies-
 
       - run:
-        name: Install Dependencies
-        command: npm i
+          name: Install Dependencies
+          command: npm i
 
       - run:
-        name: Install Greenkeeper-lockfile
-        command: npm i greenkeeper-lockfile@1
+          name: Install Greenkeeper-lockfile
+          command: npm i greenkeeper-lockfile@1
 
       - run:
-        name: Update the lockfile
-        command: npx greenkeeper-lockfile-update
+          name: Update the lockfile
+          command: npx greenkeeper-lockfile-update
 
       - save_cache:
           paths:
@@ -37,5 +37,5 @@ jobs:
       - run: npm test
 
       - run:
-        name: Commit lockfile changes
-        command: npx greenkeeper-lockfile-upload
+          name: Commit lockfile changes
+          command: npx greenkeeper-lockfile-upload

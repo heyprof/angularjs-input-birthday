@@ -1,5 +1,7 @@
 ## angularjs-input-birthday
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/heyprof/angularjs-input-birthday.svg)](https://greenkeeper.io/)
+
 An AngularJS component to select a birthday date. The package require moment and angular-translate
 
 ### Install

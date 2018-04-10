@@ -21,5 +21,6 @@ if ! git diff-index --quiet HEAD --; then
 
   git add package-lock.json
   git commit -m "chore(*): update lockfile"
-  git push
+  LAST_COMMIT=`git rev-parse HEAD`
+  git push origin $LAST_COMMIT:$TRAVIS_PULL_REQUEST_BRANCH
 fi

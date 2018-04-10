@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "What is going on ?"
+
+git status
+ls -lah
+
 if [[ $TRAVIS_PULL_REQUEST_BRANCH != *"greenkeeper"* ]]; then
 	exit 0
 fi

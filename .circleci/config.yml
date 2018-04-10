@@ -29,13 +29,13 @@ jobs:
           name: Update the lockfile
           command: npx greenkeeper-lockfile-update
 
+      - run:
+          name: Commit lockfile changes
+          command: npx greenkeeper-lockfile-upload
+
       - save_cache:
           paths:
             - node_modules
           key: dependencies-{{ checksum "package-lock.json" }}
 
       - run: npm test
-
-      - run:
-          name: Commit lockfile changes
-          command: npx greenkeeper-lockfile-upload

@@ -4,14 +4,22 @@ language: node_js
 node_js:
   - 9
 
-github-token: $GITHUB_TOKEN
-before_install: npm install -g greenkeeper-lockfile@1
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
-
 cache:
   directories:
     - "node_modules"
 
 git:
   depth: false
+
+before_script:
+  - bash ci/commit-lockfile.sh
+
+after_success:
+  - bash ci/commit-lockfile.sh
+
+notifications:
+  email: false
+  slack:
+    on_success: change
+    rooms:
+      - heyprof:OnsMQaj2FtGkJ972FzpPw60T#pipelines-front

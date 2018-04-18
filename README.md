@@ -1,4 +1,7 @@
-## angularjs-input-birthday
+
+# angularjs-input-birthday
+
+[![CircleCI][badge-circleci-img]][badge-circleci-lnk]
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/heyprof/angularjs-input-birthday.svg)](https://greenkeeper.io/)
 
@@ -64,3 +67,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[site]: https://heyprof.github.io/angularjs-input-birthday/
+
+[badge-circleci-img]: https://circleci.com/gh/heyprof/angularjs-input-birthday/tree/master.svg?style=svg
+[badge-circleci-lnk]: https://circleci.com/gh/heyprof/angularjs-input-birthday/tree/master

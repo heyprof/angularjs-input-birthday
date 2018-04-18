@@ -1,9 +1,8 @@
 
 # angularjs-input-birthday
 
-[![CircleCI][badge-circleci-img]][badge-circleci-lnk]
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/heyprof/angularjs-input-birthday.svg)](https://greenkeeper.io/)
+[![CircleCI badge][badge-circleci-img]][badge-circleci-lnk]
+[![Greenkeeper badge][badge-greenkeeper-img]][badge-greenkeeper-lnk]
 
 An AngularJS component to select a birthday date. The package require moment and angular-translate
 
@@ -72,3 +71,6 @@ SOFTWARE.
 
 [badge-circleci-img]: https://circleci.com/gh/heyprof/angularjs-input-birthday/tree/master.svg?style=svg
 [badge-circleci-lnk]: https://circleci.com/gh/heyprof/angularjs-input-birthday/tree/master
+
+[badge-greenkeeper-img]: https://badges.greenkeeper.io/heyprof/angularjs-input-birthday.svg
+[badge-greenkeeper-lnk]: https://greenkeeper.io/
